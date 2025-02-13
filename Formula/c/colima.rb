@@ -39,7 +39,7 @@ class Colima < Formula
   service do
     run [opt_bin/"colima", "start", "-f"]
     keep_alive successful_exit: true
-    environment_variables PATH: std_service_path_env
+    environment_variables PATH: std_service_path_env, HOME: Dir.home
     error_log_path var/"log/colima.log"
     log_path var/"log/colima.log"
     working_dir Dir.home
